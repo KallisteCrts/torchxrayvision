@@ -349,6 +349,11 @@ class NIH_Dataset(Dataset):
         sample["lab"] = self.labels[idx]
 
         imgid = self.csv['Image Index'].iloc[idx]
+        
+        #replacing extension from png to jpg
+        image_name, image_extension = os.path.splitext(imgid)
+        imgid = image_name + '.jpg'
+        
         img_path = os.path.join(self.imgpath, imgid)
         img = imread(img_path)
 
