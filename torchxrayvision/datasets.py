@@ -359,7 +359,7 @@ class NIH_Dataset(Dataset):
         #replacing extension from png to jpg
         image_name, image_extension = os.path.splitext(imgid)
         imgid = image_name + '.jpg'
-        
+        print(imgid)
         img_path = os.path.join(self.imgpath, imgid)
         img = imread(img_path)
 
